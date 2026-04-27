@@ -50,6 +50,22 @@ const tools = [
     color: 'var(--accent-cyan)',
     tags: ['Web APIs', 'Callback Queue', 'Microtasks', 'Render'],
   },
+  {
+    path: '/ui-hard-parts',
+    title: 'UI Hard Parts',
+    author: 'Will Sentance',
+    description: 'Visualize the JS/C++ boundary. See how facade functions cross into the browser engine for DOM, CSSOM, and rendering.',
+    color: 'var(--accent-orange)',
+    tags: ['DOM', 'CSSOM', 'Render Pipeline', 'Facade Functions'],
+  },
+  {
+    path: '/server',
+    title: 'Server Hard Parts',
+    author: 'Will Sentance',
+    description: 'Visualize the two-pronged model: JS facade + C++ implementation. See how fs, http, and timers cross from V8 through libuv to the OS.',
+    color: 'var(--accent-red)',
+    tags: ['Node.js', 'libuv', 'Thread Pool', 'Event Loop Phases'],
+  },
 ];
 
 export default function HomePage() {

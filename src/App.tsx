@@ -8,6 +8,8 @@ const ThisBinding = lazy(() => import('./pages/ThisBinding'));
 const PrototypeChain = lazy(() => import('./pages/PrototypeChain'));
 const RecursionTree = lazy(() => import('./pages/Recursion'));
 const EventLoop = lazy(() => import('./pages/EventLoop'));
+const ServerHardParts = lazy(() => import('./pages/ServerHardParts'));
+const UIHardParts = lazy(() => import('./pages/UIHardParts'));
 
 function Loading() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
           <Route path="/prototype" element={<PrototypeChain />} />
           <Route path="/recursion" element={<RecursionTree />} />
           <Route path="/event-loop" element={<EventLoop />} />
+          <Route path="/server" element={<ServerHardParts />} />
+          <Route path="/ui-hard-parts" element={<UIHardParts />} />
         </Routes>
       </Suspense>
     </HashRouter>

@@ -36,17 +36,18 @@ const highlightLineTheme = EditorView.baseTheme({
 
 interface CodeEditorProps {
   code: string;
-  onCodeChange: (code: string) => void;
+  onCodeChange?: (code: string) => void;
   highlightLine: number;
+  readOnly?: boolean;
 }
 
-export function CodeEditor({ code, onCodeChange, highlightLine }: CodeEditorProps) {
+export function CodeEditor({ code, onCodeChange, highlightLine, readOnly = false }: CodeEditorProps) {
   const editorRef = useRef<HTMLDivElement>(null);
   const viewRef = useRef<EditorView | null>(null);
   const codeRef = useRef(code);
 
   const handleChange = useCallback((update: { state: EditorState; docChanged: boolean }) => {
-    if (update.docChanged) {
+    if (update.docChanged && onCodeChange) {
       const newCode = update.state.doc.toString();
       codeRef.current = newCode;
       onCodeChange(newCode);
@@ -77,7 +78,8 @@ export function CodeEditor({ code, onCodeChange, highlightLine }: CodeEditorProp
           '.cm-gutters': { background: 'var(--bg-secondary)', border: 'none', color: 'var(--text-muted)' },
           '.cm-activeLineGutter': { background: 'var(--bg-tertiary)' },
         }),
-        EditorView.editable.of(true),
+        EditorView.editable.of(!readOnly),
+        EditorState.readOnly.of(readOnly),
       ],
     });
 
