@@ -1,0 +1,109 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.backLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  color: var(--accent-blue);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--accent-purple);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.runBtn {
+  padding: 6px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.runBtn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-highlight);
+}
+
+.hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 260px;
+  gap: 12px;
+  padding: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.leftPanel { min-height: 0; overflow: hidden; }
+.centerPanel { min-height: 0; overflow: hidden; }
+.rightPanel { display: flex; flex-direction: column; gap: 12px; min-height: 0; overflow: hidden; }
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px 12px;
+  flex-shrink: 0;
+}
+
+.errorPanel { display: flex; flex-direction: column; gap: 8px; padding: 20px; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--accent-red); height: 100%; }
+.errorTitle { font-size: 13px; font-weight: 700; color: var(--accent-red); text-transform: uppercase; letter-spacing: 0.05em; }
+.errorMessage { font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); white-space: pre-wrap; word-break: break-word; }
+.emptyState { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); font-size: 14px; font-style: italic; background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border-color); }

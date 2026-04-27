@@ -1,0 +1,201 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.globalContext {
+  border: 2px solid var(--global-ctx-border);
+  border-radius: var(--radius-lg);
+  background: var(--global-ctx);
+  min-height: 200px;
+  transition: border-color 0.3s;
+}
+
+.globalContext.highlighted {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(92, 156, 245, 0.15);
+}
+
+.contextHeader {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--global-ctx-border);
+  background: rgba(45, 74, 106, 0.3);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.contextLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.02em;
+}
+
+.contextBody {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.memorySection {
+  flex: 1;
+}
+
+.memorySectionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.memoryList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.memoryEntry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  transition: background 0.2s;
+}
+
+.memoryEntry.isNew {
+  background: rgba(107, 201, 119, 0.1);
+}
+
+.memoryEntry.isChanged {
+  background: rgba(229, 192, 123, 0.12);
+}
+
+.memoryName {
+  color: var(--accent-cyan);
+  font-weight: 600;
+  min-width: 60px;
+}
+
+.memorySeparator {
+  color: var(--text-muted);
+}
+
+.memoryValue {
+  color: var(--text-primary);
+}
+
+.valueNumber { color: var(--accent-orange); }
+.valueString { color: var(--accent-green); }
+.valueBoolean { color: var(--accent-yellow); }
+.valueFunction { color: var(--accent-purple); font-style: italic; }
+.valueUndefined { color: var(--text-muted); font-style: italic; }
+
+.emptyMemory {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.localContext {
+  border: 2px solid var(--local-ctx-border);
+  border-radius: var(--radius-md);
+  background: var(--local-ctx);
+  margin-top: 4px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.localContext.highlighted {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 16px rgba(107, 201, 119, 0.15);
+}
+
+.localContextHeader {
+  padding: 8px 14px;
+  background: rgba(45, 106, 74, 0.3);
+  border-bottom: 1px solid var(--local-ctx-border);
+}
+
+.localContextHeader .contextLabel {
+  color: var(--accent-green);
+  font-size: 12px;
+}
+
+.localContextBody {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.closureSection {
+  background: var(--closure-bg);
+  border: 1px dashed var(--closure-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.closureLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent-purple);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.closureIcon {
+  font-size: 14px;
+}
+
+.closureEntries {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.closureEntry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 2px 6px;
+  opacity: 0.85;
+}

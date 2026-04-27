@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  min-height: 44px;
+}
+
+.phaseBadge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phaseExecution {
+  color: var(--accent-blue);
+  background: rgba(92, 156, 245, 0.12);
+}
+
+.phaseEventLoop {
+  color: var(--accent-yellow);
+  background: rgba(229, 192, 123, 0.12);
+}
+
+.phaseCallback {
+  color: var(--accent-orange);
+  background: rgba(209, 154, 102, 0.12);
+}
+
+.phaseMicrotask {
+  color: var(--accent-purple);
+  background: rgba(198, 120, 221, 0.12);
+}
+
+.text {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.4;
+}

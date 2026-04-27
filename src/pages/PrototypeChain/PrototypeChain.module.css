@@ -1,0 +1,505 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Top Bar ──────────────────────────────────────── */
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.backLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  color: var(--accent-blue);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--accent-orange);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.examples {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.exBtn {
+  padding: 5px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.exBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.exBtnActive {
+  background: rgba(209, 154, 102, 0.15);
+  color: var(--accent-orange);
+  border-color: rgba(209, 154, 102, 0.4);
+}
+
+/* ── Main Layout ──────────────────────────────────── */
+
+.main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.codePanel {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+  min-height: 0;
+}
+
+.vizPanel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* ── Code Input ───────────────────────────────────── */
+
+.codeInput {
+  flex: 1;
+  padding: 16px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  border: none;
+  outline: none;
+  resize: none;
+  tab-size: 2;
+}
+
+/* ── Visualization Scroll ─────────────────────────── */
+
+.vizScroll {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+}
+
+.objCount {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Chain Hint ───────────────────────────────────── */
+
+.chainHint {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chainHint strong {
+  color: var(--accent-orange);
+  font-weight: 700;
+}
+
+/* ── Chain Container ──────────────────────────────── */
+
+.chainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* ── Object Card ──────────────────────────────────── */
+
+.objectCard {
+  min-width: 180px;
+  max-width: 280px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.objectHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.objectName {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nameInstance {
+  color: var(--accent-orange);
+}
+
+.namePrototype {
+  color: var(--accent-purple);
+}
+
+.nameBuiltin {
+  color: var(--text-muted);
+}
+
+.objectTag {
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.tagInstance {
+  color: var(--accent-orange);
+  background: rgba(209, 154, 102, 0.12);
+  border: 1px solid rgba(209, 154, 102, 0.3);
+}
+
+.tagPrototype {
+  color: var(--accent-purple);
+  background: rgba(198, 120, 221, 0.12);
+  border: 1px solid rgba(198, 120, 221, 0.3);
+}
+
+.tagBuiltin {
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+}
+
+/* ── Properties Table ─────────────────────────────── */
+
+.propsTable {
+  padding: 6px 12px;
+}
+
+.propRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 6px;
+  margin: 0 -6px;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: background 0.25s;
+}
+
+.propName {
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.propSep {
+  color: var(--text-muted);
+}
+
+.propValue {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.propHighlighted {
+  background: rgba(107, 201, 119, 0.18);
+}
+
+.propHighlighted .propName {
+  color: var(--accent-green);
+}
+
+.noProps {
+  padding: 8px 12px;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Object Highlight States ──────────────────────── */
+
+.objectSearching {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 14px rgba(209, 154, 102, 0.2),
+              inset 0 0 8px rgba(209, 154, 102, 0.04);
+}
+
+@keyframes foundPulse {
+  0%, 100% { box-shadow: 0 0 14px rgba(107, 201, 119, 0.2), inset 0 0 8px rgba(107, 201, 119, 0.04); }
+  50% { box-shadow: 0 0 22px rgba(107, 201, 119, 0.35), inset 0 0 12px rgba(107, 201, 119, 0.06); }
+}
+
+.objectFound {
+  border-color: var(--accent-green);
+  animation: foundPulse 1.5s ease-in-out infinite;
+}
+
+.objectDimmed {
+  opacity: 0.35;
+}
+
+.objectProto {
+  border-color: rgba(54, 58, 74, 0.6);
+}
+
+.objectProto .propsTable {
+  opacity: 0.7;
+}
+
+/* ── Prototype Arrow ──────────────────────────────── */
+
+.arrowRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px 0;
+}
+
+.arrowStem {
+  width: 2px;
+  height: 16px;
+  background: var(--border-color);
+  transition: background 0.3s;
+}
+
+.arrowLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  padding: 2px 0;
+  transition: color 0.3s;
+}
+
+.arrowTip {
+  font-size: 10px;
+  color: var(--border-color);
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.arrowHighlighted .arrowStem {
+  background: var(--accent-orange);
+}
+
+.arrowHighlighted .arrowLabel {
+  color: var(--accent-orange);
+}
+
+.arrowHighlighted .arrowTip {
+  color: var(--accent-orange);
+}
+
+/* ── Lookup Section ───────────────────────────────── */
+
+.lookupSection {
+  margin-top: 24px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+}
+
+.lookupTitle {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.lookupGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lookupRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 12px;
+}
+
+.lookupRow:hover {
+  background: var(--bg-tertiary);
+}
+
+.lookupActive {
+  background: rgba(209, 154, 102, 0.08);
+  border-color: rgba(209, 154, 102, 0.3);
+}
+
+.lookupExpr {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.lookupArrow {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.lookupFound {
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.lookupNotFound {
+  color: var(--accent-red);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.lookupBadge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.badgeFound {
+  background: rgba(107, 201, 119, 0.15);
+  color: var(--accent-green);
+  border: 1px solid rgba(107, 201, 119, 0.35);
+}
+
+.badgeNotFound {
+  background: rgba(224, 108, 117, 0.15);
+  color: var(--accent-red);
+  border: 1px solid rgba(224, 108, 117, 0.35);
+}
+
+/* ── Error & Empty ────────────────────────────────── */
+
+.errorBox {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(224, 108, 117, 0.4);
+}
+
+.errorLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-style: italic;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}

@@ -1,0 +1,430 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── Top Bar ──────────────────────────────────────── */
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+}
+
+.backLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: color 0.15s;
+  flex-shrink: 0;
+}
+
+.backLink:hover {
+  color: var(--accent-blue);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--accent-yellow);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.examples {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.exBtn {
+  padding: 5px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.exBtn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.exBtnActive {
+  background: rgba(229, 192, 123, 0.15);
+  color: var(--accent-yellow);
+  border-color: rgba(229, 192, 123, 0.4);
+}
+
+/* ── Main Layout ──────────────────────────────────── */
+
+.main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.codePanel {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+  min-height: 0;
+}
+
+.vizPanel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+/* ── Code Input ───────────────────────────────────── */
+
+.codeInput {
+  flex: 1;
+  padding: 16px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  border: none;
+  outline: none;
+  resize: none;
+  tab-size: 2;
+}
+
+/* ── Visualization Scroll ─────────────────────────── */
+
+.vizScroll {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Call Site Card ────────────────────────────────── */
+
+.callSiteCard {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cardLine {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  min-width: 28px;
+  flex-shrink: 0;
+}
+
+.cardCode {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.badgeNew {
+  background: rgba(198, 120, 221, 0.15);
+  color: var(--accent-purple);
+  border: 1px solid rgba(198, 120, 221, 0.35);
+}
+
+.badgeExplicit {
+  background: rgba(92, 156, 245, 0.15);
+  color: var(--accent-blue);
+  border: 1px solid rgba(92, 156, 245, 0.35);
+}
+
+.badgeImplicit {
+  background: rgba(107, 201, 119, 0.15);
+  color: var(--accent-green);
+  border: 1px solid rgba(107, 201, 119, 0.35);
+}
+
+.badgeDefault {
+  background: rgba(229, 192, 123, 0.15);
+  color: var(--accent-yellow);
+  border: 1px solid rgba(229, 192, 123, 0.35);
+}
+
+/* ── Card Body ─────────────────────────────────────── */
+
+.cardBody {
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explanation {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.explanationHighlight {
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ── Decision Tree ─────────────────────────────────── */
+
+.decisionTree {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.decisionStep {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  position: relative;
+}
+
+.decisionStep::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 100%;
+  width: 1px;
+  height: 4px;
+  background: var(--border-color);
+}
+
+.decisionStep:last-child::before {
+  display: none;
+}
+
+.stepDimmed {
+  opacity: 0.4;
+}
+
+.stepMatched {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.stepMatchedNew {
+  background: rgba(198, 120, 221, 0.08);
+}
+
+.stepMatchedExplicit {
+  background: rgba(92, 156, 245, 0.08);
+}
+
+.stepMatchedImplicit {
+  background: rgba(107, 201, 119, 0.08);
+}
+
+.stepMatchedDefault {
+  background: rgba(229, 192, 123, 0.08);
+}
+
+.stepIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 1px solid;
+}
+
+.stepIconEmpty {
+  border-color: var(--border-color);
+  color: var(--text-muted);
+  background: transparent;
+}
+
+.stepIconSkipped {
+  border-color: var(--border-color);
+  color: var(--text-muted);
+  background: transparent;
+  font-size: 9px;
+}
+
+.stepIconNew {
+  border-color: rgba(198, 120, 221, 0.5);
+  background: rgba(198, 120, 221, 0.2);
+  color: var(--accent-purple);
+}
+
+.stepIconExplicit {
+  border-color: rgba(92, 156, 245, 0.5);
+  background: rgba(92, 156, 245, 0.2);
+  color: var(--accent-blue);
+}
+
+.stepIconImplicit {
+  border-color: rgba(107, 201, 119, 0.5);
+  background: rgba(107, 201, 119, 0.2);
+  color: var(--accent-green);
+}
+
+.stepIconDefault {
+  border-color: rgba(229, 192, 123, 0.5);
+  background: rgba(229, 192, 123, 0.2);
+  color: var(--accent-yellow);
+}
+
+.stepLabel {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.stepLabelActive {
+  color: var(--text-primary);
+}
+
+.stepResult {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.stepResultActive {
+  font-weight: 600;
+}
+
+.stepResultNew {
+  color: var(--accent-purple);
+}
+
+.stepResultExplicit {
+  color: var(--accent-blue);
+}
+
+.stepResultImplicit {
+  color: var(--accent-green);
+}
+
+.stepResultDefault {
+  color: var(--accent-yellow);
+}
+
+/* ── Error & Empty ────────────────────────────────── */
+
+.errorBox {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(224, 108, 117, 0.4);
+}
+
+.errorLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.errorMsg {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-style: italic;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.callSiteCount {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-sm);
+}

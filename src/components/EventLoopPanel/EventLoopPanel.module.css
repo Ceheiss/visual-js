@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.container.active {
+  border-color: var(--accent-yellow);
+  box-shadow: 0 0 16px rgba(229, 192, 123, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.activeBadge {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-yellow);
+  background: rgba(229, 192, 123, 0.12);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.queue {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.queueLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.queueItems {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 28px;
+}
+
+.queueItem {
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.microtask {
+  background: rgba(198, 120, 221, 0.12);
+  border: 1px solid rgba(198, 120, 221, 0.3);
+  color: var(--accent-purple);
+}
+
+.callback {
+  background: rgba(209, 154, 102, 0.12);
+  border: 1px solid rgba(209, 154, 102, 0.3);
+  color: var(--accent-orange);
+}
+
+.emptyQueue {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 4px 8px;
+}
+
+.dormant {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-style: italic;
+  padding: 8px;
+}
